@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wish keeping app{% endblock %}
+
+{% block body %}
+
+    {% if wishes %}
+        <table id="wishes" class="table table-striped">
+            <thead>
+            <tr>
+                <th> Title</th>
+                <th> Description</th>
+                <th> Url</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for wish in wishes %}
+                <tr>
+                    <td>{{ wish.title }}</td>
+                    <td>{{ wish.description }}</td>
+                    <td><a href="{{ wish.url }}" >{{ wish.url }}</a></td>
+                    <td>
+                        <a href="/symfony_demo_wishlist/public/wish/edit/{{ wish.id }}" class="btn btn-light">Edit</a>
+                        <a href="/symfony_demo_wishlist/public/wish/delete/{{ wish.id }}" class="btn btn-danger delete-article" data-id="{{ wish.id }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No wishes to display</p>
+    {% endif %}
+{% endblock %}
