@@ -7,7 +7,7 @@ The tutorial series on Symfony done by Brad Traversy @ Traversy Media (https://y
 
 #### Install dependencies `composer install`
 
-#### Edit the env file and add DB params (DB name has been set as 'symfonyWishList')
+#### Edit the .env file and add DB params (DB name has been set as 'symfonyWishList')
 
 #### Create DB by executing `php bin/console doctrine:database:create`
 
